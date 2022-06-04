@@ -32,7 +32,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // 开发环境下的 BuglyId
-            buildConfigField 'String', 'BUGLY_ID', '\"7c0b0c576a\"'
+            //buildConfigField 'String', 'BUGLY_ID', '\"xxxxxxxxxx\"'
             signingConfig signingConfigs.release
 
         }
@@ -40,7 +40,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // 正式环境下的 BuglyId
-            buildConfigField 'String', 'BUGLY_ID', '\"8bafeef51a\"'//'\"e55efdcd17\"'
+            //buildConfigField 'String', 'BUGLY_ID', '\"xxxxxxxxxxx\"'
             signingConfig signingConfigs.release
         }
     }
