@@ -6,7 +6,7 @@ import com.alan.commonlib.application.IModuleInit
 
 /**
  * 项目名称：
- * 类名称：FcfrtModuleLifecycleConfig.kt
+ * 类名称：ModuleLifecycleConfig.kt
  * 类描述：作为组件生命周期初始化的配置类,通过反射机制,动态调用每个组件初始化逻辑
  * 作者：AlanPaine
  * 创建时间： 2020/3/24-9:58
@@ -15,7 +15,7 @@ import com.alan.commonlib.application.IModuleInit
  */
 class ModuleLifecycleConfig {
     private object SingleHolder {
-        internal val instances = ModuleLifecycleConfig()
+        val instances = ModuleLifecycleConfig()
     }
 
     /** 优先初始化  */

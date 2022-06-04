@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/library/library-arms" />
             <option value="$PROJECT_DIR$/library/library-common" />
+            <option value="$PROJECT_DIR$/library/library-widget" />
             <option value="$PROJECT_DIR$/module" />
             <option value="$PROJECT_DIR$/module/module-main" />
           </set>

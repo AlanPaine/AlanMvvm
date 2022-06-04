@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.17451874366767983" />
+        <entry key="library/library-widget/src/main/res/drawable/rating_star_fill_ic.xml" value="0.156" />
+        <entry key="library/library-widget/src/main/res/drawable/rating_star_half_ic.xml" value="0.1335" />
+        <entry key="library/library-widget/src/main/res/drawable/rating_star_off_ic.xml" value="0.156" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

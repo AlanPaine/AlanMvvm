@@ -1,10 +1,11 @@
-package com.alan.module_main
+package com.alan.module_main.ui.activity
 
 import android.os.Bundle
 import com.alan.arms.aop.Log
 import com.alan.arms.base.activity.BaseActivity
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.isOnDoubleClick
+import com.alan.module_main.R
 
 
 class MainActivity : BaseActivity<BaseViewModel>() {
@@ -14,7 +15,7 @@ class MainActivity : BaseActivity<BaseViewModel>() {
     override fun getLayoutId(): Int {
         return R.layout.activity_main
     }
-    @Log("pcz=================")
+    @Log("Text")
     override fun onViewCreated(savedInstanceState: Bundle?) {
         showToast("测试")
     }

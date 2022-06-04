@@ -69,4 +69,5 @@
     <!-- 橙色 -->
     <color name="orange">#FFFFA500</color>
 
+    <color name="main_color">#3F51B5</color>
 </resources>

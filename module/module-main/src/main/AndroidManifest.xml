@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlanMvvm">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
