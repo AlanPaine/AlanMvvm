@@ -1,0 +1,18 @@
+apply from: "../module.build.gradle"
+android {
+    defaultConfig {
+        //让svg里面可以跟着主题颜色变
+        vectorDrawables.useSupportLibrary = true
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.alan.module_main"
+        }
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+
+}

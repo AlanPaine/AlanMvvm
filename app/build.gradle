@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+def keystorePropertiesFile = rootProject.file("./keystore/keystore.properties")
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+android {
+    compileSdk rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.alan.demo"
+        minSdk rootProject.ext.android.minSdkVersion
+        targetSdk rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 开发环境下的 BuglyId
+            buildConfigField 'String', 'BUGLY_ID', '\"7c0b0c576a\"'
+            signingConfig signingConfigs.release
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 正式环境下的 BuglyId
+            buildConfigField 'String', 'BUGLY_ID', '\"8bafeef51a\"'//'\"e55efdcd17\"'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == 'release') {
+                variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/outapp/${variant.buildType.name}")
+                outputFileName = "alanpaine_${project.name}_v${defaultConfig.versionName}_${new Date().format("yyyyMMddHHmm")}_${variant.buildType.name}.apk"
+            } else if (variant.buildType.name == 'debug') {
+                outputFileName = "alanpaine_${project.name}_v${defaultConfig.versionName}_${new Date().format("yyyyMMddHHmm")}_${variant.buildType.name}.apk"
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation rootProject.ext.androidx["core.ktx"]
+    implementation rootProject.ext.androidx["androidx.material"]
+    implementation rootProject.ext.androidx["androidx.appcompat"]
+    implementation rootProject.ext.androidx["androidx.constraintlayout"]
+    testImplementation rootProject.ext.androidx["junit"]
+    androidTestImplementation rootProject.ext.androidx["androidx.test.ext-junit"]
+    androidTestImplementation rootProject.ext.androidx["androidx.test.espresso:espresso-core"]
+    if (isBuildModule.toBoolean()) {
+        implementation project(path: ':library:library-common')
+    }else {
+        implementation project(path: ':module:module-main')
+    }
+}

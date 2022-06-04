@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlanMvvm.iml" filepath="$PROJECT_DIR$/.idea/modules/AlanMvvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/AlanMvvm.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/AlanMvvm.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-common/AlanMvvm.library.library-common.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/AlanMvvm.module.iml" filepath="$PROJECT_DIR$/.idea/modules/module/AlanMvvm.module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.main.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module-main/AlanMvvm.module.module-main.unitTest.iml" />
+    </modules>
+  </component>
+</project>

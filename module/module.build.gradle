@@ -1,0 +1,85 @@
+//if (isBuildModule.toBoolean()) {
+//    //作为独立App应用运行
+//    plugins {
+//        id 'com.android.application'
+//        id 'org.jetbrains.kotlin.android'
+//        id 'kotlin-kapt'
+//    }
+//} else {
+//    //作为组件运行
+//    plugins {
+//        id 'com.android.library'
+//        id 'org.jetbrains.kotlin.android'
+//        id 'kotlin-kapt'
+//    }
+//}
+if (isBuildModule.toBoolean()) {
+    //作为独立App应用运行
+    apply plugin: 'com.android.application'
+    apply plugin: 'org.jetbrains.kotlin.android'
+    apply plugin: 'kotlin-kapt'
+} else {
+    //作为组件运行
+    apply plugin: 'com.android.library'
+    apply plugin: 'org.jetbrains.kotlin.android'
+    apply plugin: 'kotlin-kapt'
+}
+android {
+    compileSdk rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        minSdk rootProject.ext.android.minSdkVersion
+        targetSdk rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+//    sourceSets {
+//        main{
+//            //jni库统一放在libs目录下
+//            //jniLibs.srcDir = ['libs']
+//            if (isBuildModule.toBoolean()){
+//                //单独运行
+//                manifest.srcFile 'src/main/alone/AndroidManifest.xml'
+//            }else {
+//                //合并到宿主中
+//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//                resources{
+//                    //正式版本时.剔除debug文件夹下的所有调式文件
+//                    exclude 'src/debug/*'
+//                }
+//            }
+//        }
+//    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation rootProject.ext.androidx["core.ktx"]
+        implementation rootProject.ext.androidx["androidx.material"]
+        implementation rootProject.ext.androidx["androidx.appcompat"]
+        implementation rootProject.ext.androidx["androidx.constraintlayout"]
+        testImplementation rootProject.ext.androidx["junit"]
+        androidTestImplementation rootProject.ext.androidx["androidx.test.ext-junit"]
+        androidTestImplementation rootProject.ext.androidx["androidx.test.espresso:espresso-core"]
+        api project(path: ':library:library-common')
+    }
+}

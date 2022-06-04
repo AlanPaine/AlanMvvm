@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.android.minSdkVersion
+        targetSdk rootProject.ext.android.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    sourceSets {
+        main {
+            // res 资源目录配置
+            res.srcDirs(
+                    'src/main/res',
+                    'src/main/res-sw',
+            )
+        }
+    }
+}
+
+dependencies {
+
+    implementation rootProject.ext.androidx["core.ktx"]
+    implementation rootProject.ext.androidx["androidx.material"]
+    implementation rootProject.ext.androidx["androidx.appcompat"]
+    implementation rootProject.ext.androidx["androidx.constraintlayout"]
+    testImplementation rootProject.ext.androidx["junit"]
+    androidTestImplementation rootProject.ext.androidx["androidx.test.ext-junit"]
+    androidTestImplementation rootProject.ext.androidx["androidx.test.espresso:espresso-core"]
+
+    api rootProject.ext.androidx["lifecycle-livedata-ktx"]
+    api rootProject.ext.androidx["lifecycle-viewmodel-ktx"]
+    //日志
+    api rootProject.ext.dependencies["logger"]
+    // AOP 插件库：https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+    api rootProject.ext.dependencies["aspectjrt"]
+    // 吐司框架：https://github.com/getActivity/ToastUtils
+    api rootProject.ext.dependencies["toast"]
+}
