@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.getActivity:ToastUtils:9.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f2a739aa72653b8e4dd926330488630e/transformed/ToastUtils-9.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f2a739aa72653b8e4dd926330488630e/transformed/ToastUtils-9.5/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f2a739aa72653b8e4dd926330488630e/transformed/ToastUtils-9.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1e1ad784d95247d3ad52e8028ccc7b5f/transformed/jetified-ToastUtils-9.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1e1ad784d95247d3ad52e8028ccc7b5f/transformed/jetified-ToastUtils-9.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1e1ad784d95247d3ad52e8028ccc7b5f/transformed/jetified-ToastUtils-9.5/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.getActivity/ToastUtils/9.5/7f955ff2e916ce4950c191c6c3a175798d91ea80/ToastUtils-9.5-javadoc.jar!/" />
