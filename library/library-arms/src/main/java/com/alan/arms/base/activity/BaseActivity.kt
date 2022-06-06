@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
@@ -14,15 +15,12 @@ import com.alan.arms.action.*
 import com.alan.arms.base.fragment.BaseFragment
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.getVmClazz
+import com.alan.arms.ext.notNull
 
 abstract class BaseActivity <VM : BaseViewModel>  : AppCompatActivity(),IActivityAction,ActivityAction,ToastAction,
     HandlerAction,KeyboardAction {
 
     lateinit var mViewModel: VM
-    /**
-     * 是否需要使用DataBinding 供子类BaseVmDbActivity修改，用户请慎动
-     */
-    private var isUserDb = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,11 +35,11 @@ abstract class BaseActivity <VM : BaseViewModel>  : AppCompatActivity(),IActivit
      */
     protected open fun initLayout() {
         mViewModel = createViewModel()
-        if (!isUserDb) {
+        initDataBind().notNull({
+            setContentView(it as View)
+        }, {
             setContentView(getLayoutId())
-        } else {
-            initDataBind()
-        }
+        })
         initSoftKeyboard()
     }
     /**
