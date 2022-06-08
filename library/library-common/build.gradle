@@ -39,4 +39,5 @@ dependencies {
     androidTestImplementation rootProject.ext.androidx["androidx.test.ext-junit"]
     androidTestImplementation rootProject.ext.androidx["androidx.test.espresso:espresso-core"]
     api project(path: ':library:library-widget')
+    api project(path: ':library:library-network')
 }

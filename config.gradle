@@ -43,6 +43,10 @@ ext {
             "bugly-crashreport-upgrade"    : "com.tencent.bugly:crashreport_upgrade:latest.release",
             "bugly-nativecrashreport"      : "com.tencent.bugly:nativecrashreport:latest.release",
             "banner"                       :"com.youth.banner:banner:2.1.0",
+            "okhttp3"                      :"com.squareup.okhttp3:okhttp:4.9.3",
+            "rxhttp"                       :"com.github.liujingxing.rxhttp:rxhttp:2.8.8",
+            // ksp/kapt/annotationProcessor choose one
+            "rxhttp-compiler"              :"com.github.liujingxing.rxhttp:rxhttp-compiler:2.8.8",
 
     ]
 

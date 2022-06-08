@@ -47,8 +47,8 @@
     <orderEntry type="module-library" scope="TEST">
       <library name="Gradle: kaptGeneratedTestClasses">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../../build/module/module-main/tmp/kapt3/classes/debugAndroidTest" />
           <root url="file://$MODULE_DIR$/../../../../build/module/module-main/tmp/kapt3/classes/debugUnitTest" />
+          <root url="file://$MODULE_DIR$/../../../../build/module/module-main/tmp/kapt3/classes/debugAndroidTest" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

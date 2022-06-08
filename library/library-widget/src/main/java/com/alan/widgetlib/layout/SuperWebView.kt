@@ -2,14 +2,20 @@ package com.alan.widgetlib.layout
 
 import android.content.Context
 import android.os.Build
+import android.text.TextUtils
 import android.util.AttributeSet
+import android.webkit.ValueCallback
 import android.webkit.WebSettings
 import android.webkit.WebView
+import androidx.annotation.RequiresApi
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 
 class SuperWebView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) :
-    WebView(context, attrs, defStyleAttr, defStyleRes) {
+    WebView(context, attrs, defStyleAttr, defStyleRes), QuickCallJs {
 
     init {
         val settings = settings
@@ -50,5 +56,88 @@ class SuperWebView @JvmOverloads constructor(
         return originalUrl ?: super.getUrl()
     }
 
+    /**
+     * 有参调用并返回调用结果
+     */
+    override fun quickCallJs(
+        method: String?,
+        callback: ValueCallback<String?>?,
+        params: Array<out String?>
+    ) {
+        val sb = java.lang.StringBuilder()
+        sb.append("javascript:$method")
+        if (params.isEmpty()) {
+            sb.append("()")
+        } else {
+            sb.append("(").append(concat(*params)).append(")")
+        }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            evaluateJavascript(sb.toString()) { value -> callback?.onReceiveValue(value) }
+        }else{
+            loadUrl(sb.toString())
+        }
+    }
+
+    /**
+     * 有参调用
+     */
+    override fun quickCallJs(method: String?, params: Array<out String?>) {
+        this.quickCallJs(method,null,params)
+    }
+
+    /**
+     * 无参数调用
+     */
+    override fun quickCallJs(method: String?) {
+        this.quickCallJs(method, arrayOf())
+    }
+
+    /**
+     * 合并多个字符串
+     */
+    private fun concat(vararg params: String?): String {
+        val mStringBuilder = StringBuilder()
+        for (i in params.indices) {
+            val param = params[i]
+            if (!isJson(param)) {
+                mStringBuilder.append("\"").append(param).append("\"")
+            } else {
+                mStringBuilder.append(param)
+            }
+            if (i != params.size - 1) {
+                mStringBuilder.append(" , ")
+            }
+        }
+        return mStringBuilder.toString()
+    }
+
+    /**
+     * 判断是不是json
+     */
+    private fun isJson(target: String?): Boolean {
+        if (TextUtils.isEmpty(target)) {
+            return false
+        }
+        var tag: Boolean = try {
+            if (target?.startsWith("[") == true) {
+                JSONArray(target)
+            } else {
+                JSONObject(target)
+            }
+            true
+        } catch (ignore: JSONException) {
+            //            ignore.printStackTrace();
+            false
+        }
+        return tag
+    }
+
+}
+interface QuickCallJs{
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
+    fun quickCallJs(method: String?, callback: ValueCallback<String?>?, params: Array<out String?>)
+
+    fun quickCallJs(method: String?,  params: Array<out String?>)
+    fun quickCallJs(method: String?)
 }

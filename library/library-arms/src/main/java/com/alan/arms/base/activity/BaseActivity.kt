@@ -34,12 +34,12 @@ abstract class BaseActivity <VM : BaseViewModel>  : AppCompatActivity(),IActivit
      * 初始化布局
      */
     protected open fun initLayout() {
-        mViewModel = createViewModel()
         initDataBind().notNull({
             setContentView(it as View)
         }, {
             setContentView(getLayoutId())
         })
+        mViewModel = createViewModel()
         initSoftKeyboard()
     }
     /**
