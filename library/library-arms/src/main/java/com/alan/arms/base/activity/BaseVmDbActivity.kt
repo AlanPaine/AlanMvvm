@@ -10,7 +10,7 @@ import com.alan.arms.ext.inflateBindingWithGeneric
  * 描述　: ViewModelFragment基类，自动把ViewModel注入Activity和Databind注入进来了
  * 需要使用Databind的清继承它
  */
-abstract class BaseVmDbActivity <VM : BaseViewModel, DB : ViewDataBinding> : BaseActivity<VM>() {
+abstract class BaseVmDbActivity <VM : BaseViewModel, DB : ViewDataBinding> : BaseVmActivity<VM>() {
 
     override fun getLayoutId(): Int  = 0
 

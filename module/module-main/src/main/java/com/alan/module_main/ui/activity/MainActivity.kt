@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.alan.arms.aop.Log
-import com.alan.arms.base.activity.BaseActivity
 import com.alan.arms.base.activity.BaseVmVbActivity
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.isOnDoubleClick
-import com.alan.module_main.R
 import com.alan.module_main.databinding.ActivityMainBinding
 
 

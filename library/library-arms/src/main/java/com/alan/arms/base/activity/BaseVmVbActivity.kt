@@ -10,7 +10,7 @@ import com.alan.arms.ext.inflateBindingWithGeneric
  * 描述　: ViewModelFragment基类，自动把ViewModel注入Activity和 ViewBinding 注入进来了
  * 需要使用 ViewBinding 的清继承它
  */
-abstract class BaseVmVbActivity<VM : BaseViewModel, VB : ViewBinding> : BaseActivity<VM>() {
+abstract class BaseVmVbActivity<VM : BaseViewModel, VB : ViewBinding> : BaseVmActivity<VM>() {
 
     override fun getLayoutId(): Int  = 0
 
