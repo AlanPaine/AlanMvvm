@@ -1,20 +1,8 @@
-/*
- * @Description: Description
- * @Author: wuchuan 1614
- * @Date: 2021-03-25 13:43:09
- * @LastEditTime: 2022-06-01 11:28:55
- * @LastEditors: ningheng
- * @Reference:
- */
-// import getConfig from "next/config";
-
-import { isBrowser } from './utils';
-
-// const {
+// let {
 //   publicRuntimeConfig
 // } = getConfig();
 
-const publicRuntimeConfig = {
+let publicRuntimeConfig = {
 	appConfig: {
 		callName: 'hzAppCallFn',
 		callAndroid: 'android',
@@ -26,13 +14,27 @@ function getCallbackName(name) {
 	return `${name}_cb`;
 }
 
+function isBrowser() {
+        let userAgent = window.navigator.userAgent;
+        let isAndroid = userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1; // android终端
+        let isiOS = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+        if (isAndroid) {
+                // console.dir("是在安卓手机的微信浏览器里");
+                return 'android';
+        } else if (isiOS) {
+                // console.dir("是在ios手机里的微信浏览器里");
+                return 'ios';
+        }
+        return '';
+}
+
 /**
  * 注册事件
  *
  * @param name 事件名称 string
  * @param fn 函数方法 func (obj, cb)
  */
-export function register(name, fn) {
+function register(name, fn) {
 	if (typeof name !== 'string') {
 		return new Error('First param must be a string.');
 	} else if (typeof fn !== 'function') {
@@ -70,7 +72,7 @@ export function register(name, fn) {
  *
  * @param name 事件名称 string
  */
-export function registerOff(name) {
+function registerOff(name) {
 	if (typeof name !== 'string') {
 		return new Error('First param must be a string.');
 	} else if (typeof window === 'undefined') {
@@ -91,21 +93,21 @@ export function registerOff(name) {
  * @param param 参数对象 string | object | undefined
  * @param cb 回调方法 func | undefined (注意，使用回调的时候param需要是对象)
  */
-export function trigger(name, param, cb) {
+function trigger(name, param, cb) {
 	if (typeof window === 'undefined') {
 		return new Error(
 			'Please place the registration method in the customer service life cycle.',
 		);
 	}
-	const browser = isBrowser();
+	let browser = isBrowser();
 	try {
 		let newParam;
 		if (param && typeof param !== 'string') {
-			const newObj = {
+			let newObj = {
 				...param,
 			};
 			if (typeof cb === 'function') {
-				const callbackName = getCallbackName(name);
+				let callbackName = getCallbackName(name);
 				newObj.callback = callbackName;
 				// 需要优化，合理注销事件
 				register(callbackName, data => {

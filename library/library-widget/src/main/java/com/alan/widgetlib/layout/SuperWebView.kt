@@ -119,7 +119,7 @@ class SuperWebView @JvmOverloads constructor(
         if (TextUtils.isEmpty(target)) {
             return false
         }
-        var tag: Boolean = try {
+        val tag: Boolean = try {
             if (target?.startsWith("[") == true) {
                 JSONArray(target)
             } else {
