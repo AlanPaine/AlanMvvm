@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>数据交互</title>
 
 </head>
 <body>
 <div style="text-align:center">
-    <button style="width:200px" onclick="ClickBtm()">点击</button>
+    <button style="width:200px" onclick="test()">关闭网页</button>
+    <button style="width:200px" onclick="test1()">toast提示</button>
+    <button style="width:200px" onclick="test2()">打电话</button>
+    <button style="width:200px" onclick="test3()">获取经纬度</button>
+    <button style="width:200px" onclick="test4()">跳转新的Web页面</button>
 </div>
 </body>
 <script src="./withApp.js" type="text/javascript"></script>
 <script type="text/javascript">
-    function ClickBtm() {
-          var data = "调用安卓测试";
-          console.log(data)
+    function test() {
           //调用原生方法
           trigger('action',{
-            type:'getUserIno',
+            type:'back',
             data:{},
-            callback:'getTest'
+            callback:''
           });
     }
+
+    function test1() {
+       //调用原生方法
+          trigger('action',{
+            type:'toast',
+            data:{"alertType":1,"message":"text"},
+            callback:''
+          });
+    }
+
+    function test2() {
+       //调用原生方法
+          trigger('action',{
+            type:'call',
+            data:{"phoneList":["138XXXXXXXX", "138XXXXXXXX"]},
+            callback:''
+          });
+    }
+
+    function test3() {
+       //调用原生方法
+          trigger('action',{
+            type:'call',
+            data:{"longitude": 63.125,"latitude": 63.125,"description":"经纬度反编码后的地理位置（无网络的情况下，无法反编译，则传空字符串）"}},
+            callback:''
+          });
+    }
+
+    function test4() {
+       //调用原生方法
+          trigger('action',{
+            type:'call',
+            data:{"url":"新web页面的url页面","title":"新web页面的标题"},
+            callback:''
+          });
+    }
+
+    function getTest(str) {
+       //调用原生方法
+          trigger('action',{
+            type:'call',
+            data:{"phoneList":["138XXXXXXXX", "138XXXXXXXX"]},
+            callback:''
+          });
+    }
+
+
+
+
+
 </script>
 </html>
