@@ -7,8 +7,6 @@ data class JsResultBean(
     val callback:String,
     //详细数据
     val data: JsResultData?
-
-
 )
 
 data class JsResultData(
