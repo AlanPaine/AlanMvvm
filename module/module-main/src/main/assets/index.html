@@ -46,8 +46,8 @@
     function test3() {
        //调用原生方法
           trigger('action',{
-            type:'call',
-            data:{"longitude": 63.125,"latitude": 63.125,"description":"经纬度反编码后的地理位置（无网络的情况下，无法反编译，则传空字符串）"}},
+            type:'getLocation',
+            data:{"longitude": 63.125,"latitude": 63.125,"description":"经纬度反编码后的地理位置（无网络的情况下，无法反编译，则传空字符串）"},
             callback:''
           });
     }
@@ -55,7 +55,7 @@
     function test4() {
        //调用原生方法
           trigger('action',{
-            type:'call',
+            type:'gotoNewPage',
             data:{"url":"新web页面的url页面","title":"新web页面的标题"},
             callback:''
           });
