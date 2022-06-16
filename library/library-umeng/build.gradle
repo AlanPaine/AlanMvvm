@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        minSdk rootProject.ext.android.minSdkVersion
+        targetSdk rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // 清单占位符
+        /*manifestPlaceholders = [
+                // 友盟 AppKey
+                'UMENG_APPKEY' : '5fdb2702c641ae1bbea24488',
+                // QQ AppId
+                'QQ_APPID' : '101900952',
+                // QQ AppKey
+                'QQ_APPKEY' : '1e53a7c5ceec31a14ffbd70b014faf93',
+                // 微信 AppId
+                'WX_APPID' : 'wx9f66aa309fe921a4',
+                // 微信 AppKey
+                'WX_APPKEY' : 'fc4026aa7d0b4e7c9bb7387f7580c8fc',
+                // 微博 AppId
+                'SN_APPID' : '990990142',
+                // 微博 AppKey
+                'SN_APPKEY' : 'd5595beccbbe1c805751f2befdeff32e'
+        ]*/
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    implementation rootProject.ext.androidx["core.ktx"]
+    implementation rootProject.ext.androidx["androidx.material"]
+    implementation rootProject.ext.androidx["androidx.appcompat"]
+    implementation rootProject.ext.androidx["androidx.constraintlayout"]
+    testImplementation rootProject.ext.androidx["junit"]
+    androidTestImplementation rootProject.ext.androidx["androidx.test.ext-junit"]
+    androidTestImplementation rootProject.ext.androidx["androidx.test.espresso:espresso-core"]
+    // 友盟基础组件：https://bintray.com/umsdk/release/common
+    api rootProject.ext.dependencies["umsdk-common"]
+    api rootProject.ext.dependencies["umsdk-asms"]
+
+    //https://developer.umeng.com/docs/128606/detail/129620
+    api rootProject.ext.dependencies["umsdk-share-core"]
+    api rootProject.ext.dependencies["umsdk-share-board"]
+    api rootProject.ext.dependencies["umsdk-share-qq"]
+    api rootProject.ext.dependencies["umsdk-share-wx"]
+    api rootProject.ext.dependencies["umsdk-share-sina"]
+
+   // api  rootProject.ext.dependencies["qqopensdk"]
+    //api files('libs/open_sdk_3.5.11.6_r13b47b7_lite.jar') //QQ官方依赖库，必选
+    api  rootProject.ext.dependencies["wechat-sdk-android-without-mta"]
+}
