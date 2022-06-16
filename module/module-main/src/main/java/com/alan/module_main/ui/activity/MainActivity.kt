@@ -10,10 +10,15 @@ import com.alan.arms.base.activity.BaseVmVbActivity
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.isOnDoubleClick
 import com.alan.commonlib.other.GsonUtils
+import com.alan.module_main.R
 import com.alan.module_main.config.AppConstants
 import com.alan.module_main.databinding.ActivityMainBinding
 import com.alan.module_main.entity.JsResultBean
 import com.alan.module_main.other.JsBridge
+import com.alan.umenglib.AifbdPlatform
+import com.alan.umenglib.AifbdUmengClient
+import com.alan.umenglib.AifbdUmengShare
+import com.axber.art.ext.getBitmap
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -30,7 +35,10 @@ class MainActivity : BaseVmVbActivity<BaseViewModel,ActivityMainBinding>() {
             webViewClient = object :WebViewClient(){
                 override fun onPageFinished(view: WebView?, url: String?) {
                     super.onPageFinished(view, url)
-                    showToast("加载完成")
+                    //showToast("加载完成")
+                    runOnUiThread {
+                        mViewBind.spWebView.quickCallJs("appData", arrayOf("大家还记得和"))
+                    }
                 }
             }
             addJavascriptInterface(JsBridge(object : JsBridge.OnListener {
@@ -69,12 +77,39 @@ class MainActivity : BaseVmVbActivity<BaseViewModel,ActivityMainBinding>() {
                                 //打开新界面
                                 showToast("打开新界面")
                             }
+
+                            AppConstants.SHARE.tag-> {
+                                //打开新界面
+                                //this@MainActivity.runOnUiThread {
+                                    val shareData = AifbdUmengShare.ShareData(this@MainActivity)
+                                    //shareData.setShareImage(mViewBind.spWebView.getBitmap())
+                                    shareData.setShareImage(R.mipmap.banner3)
+//                                    shareData.setShareLogo(R.mipmap.ic_launcher)
+//                                    shareData.setShareDescription("垃圾分享")
+//                                    shareData.setShareTitle("垃圾分享垃圾分享")
+//                                    shareData.shareUrl = "https://www.aifbd.com"
+                                    AifbdUmengClient.shareImage(this@MainActivity, AifbdPlatform.WECHAT,shareData, object :
+                                        AifbdUmengShare.OnShareListener{
+                                        /**
+                                         * 分享成功的回调
+                                         *
+                                         * @param platform      平台名称
+                                         */
+                                        override fun onSucceed(platform: AifbdPlatform?) {
+
+                                        }
+
+                                    })
+                                //}
+
+                                showToast("打开分享")
+                            }
                             else -> {
                                 showToast(data.toString())
                             }
                         }
                         //showToast("${data?.data}")
-                        // mViewBind.spWebView.quickCallJs(data?.callback+"", arrayOf("大家还记得和"))
+
                     }
                 }
             }),"android")

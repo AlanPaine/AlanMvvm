@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-def keystorePropertiesFile = rootProject.file("./keystore/keystore.properties")
+def keystorePropertiesFile =  rootProject.file(rootProject.ext.app.keystore)
 // Initialize a new Properties() object called keystoreProperties.
 def keystoreProperties = new Properties()
 // Load your keystore.properties file into the keystoreProperties object.
@@ -11,13 +11,29 @@ android {
     compileSdk rootProject.ext.android.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.alan.demo"
+        applicationId rootProject.ext.app.appId
         minSdk rootProject.ext.android.minSdkVersion
         targetSdk rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        versionCode rootProject.ext.app.versionCode
+        versionName rootProject.ext.app.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                // 友盟 AppKey
+                'UMENG_APPKEY' : '你的对应key',
+                // QQ AppId
+                'QQ_APPID' : '你的对应key',
+                // QQ AppKey
+                'QQ_APPKEY' : '你的对应key',
+                // 微信 AppId
+                'WX_APPID' : '你的对应key',
+                // 微信 AppKey
+                'WX_APPKEY' : '你的对应key',
+                // 微博 AppId
+                'SN_APPID' : '你的对应key',
+                // 微博 AppKey
+                'SN_APPKEY' : '你的对应key'
+        ]
     }
     signingConfigs {
         release {
@@ -34,7 +50,10 @@ android {
             // 开发环境下的 BuglyId
             //buildConfigField 'String', 'BUGLY_ID', '\"xxxxxxxxxx\"'
             signingConfig signingConfigs.release
-
+            // 添加清单占位符
+            addManifestPlaceholders([
+                    'app_name'    :    "AlanMvvm Debug 版"
+            ])
         }
         release {
             minifyEnabled false
@@ -42,6 +61,10 @@ android {
             // 正式环境下的 BuglyId
             //buildConfigField 'String', 'BUGLY_ID', '\"xxxxxxxxxxx\"'
             signingConfig signingConfigs.release
+            // 添加清单占位符
+            addManifestPlaceholders([
+                    'app_name'    :    '@string/app_name'
+            ])
         }
     }
     compileOptions {

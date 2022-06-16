@@ -21,5 +21,10 @@ enum class AppConstants(var tag:String) {
     /**
      * 跳转新的Web页面
      */
-    GO_TO_NEW_PAGE("gotoNewPage")
+    GO_TO_NEW_PAGE("gotoNewPage"),
+
+    /**
+     * 分享
+     */
+    SHARE("share")
 }

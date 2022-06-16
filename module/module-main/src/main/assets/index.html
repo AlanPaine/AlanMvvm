@@ -12,6 +12,7 @@
     <button style="width:200px" onclick="test2()">打电话</button>
     <button style="width:200px" onclick="test3()">获取经纬度</button>
     <button style="width:200px" onclick="test4()">跳转新的Web页面</button>
+    <button style="width:200px" onclick="test5()">分享图片</button>
 </div>
 </body>
 <script src="./withApp.js" type="text/javascript"></script>
@@ -60,7 +61,14 @@
             callback:''
           });
     }
-
+    function test5() {
+       //调用原生方法
+          trigger('action',{
+            type:'share',
+            data:{},
+            callback:''
+          });
+    }
     function getTest(str) {
        //调用原生方法
           trigger('action',{
@@ -69,6 +77,11 @@
             callback:''
           });
     }
+
+     function appData(str) {
+        alert(str);
+     }
+
 
 
 

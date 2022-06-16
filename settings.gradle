@@ -5,6 +5,7 @@ pluginManagement {
         mavenCentral()
         // JitPack 远程仓库：https://jitpack.io
         maven { url 'https://jitpack.io' }
+        maven { url 'https://repo1.maven.org/maven2/' }
     }
 }
 dependencyResolutionManagement {
@@ -14,6 +15,7 @@ dependencyResolutionManagement {
         mavenCentral()
         // JitPack 远程仓库：https://jitpack.io
         maven { url 'https://jitpack.io' }
+        maven { url 'https://repo1.maven.org/maven2/' }
     }
 }
 rootProject.name = "AlanMvvm"
@@ -23,3 +25,4 @@ include ':module:module-main'
 include ':library:library-common'
 include ':library:library-widget'
 include ':library:library-network'
+include ':library:library-umeng'

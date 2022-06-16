@@ -7,6 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.main.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/AlanMvvm.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/AlanMvvm.library.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.androidTest.iml" />
@@ -20,6 +24,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-network/AlanMvvm.library.library-network.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-network/AlanMvvm.library.library-network.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-network/AlanMvvm.library.library-network.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-network/AlanMvvm.library.library-network.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-network/AlanMvvm.library.library-network.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-network/AlanMvvm.library.library-network.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-umeng/AlanMvvm.library.library-umeng.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-widget/AlanMvvm.library.library-widget.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-widget/AlanMvvm.library.library-widget.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-widget/AlanMvvm.library.library-widget.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-widget/AlanMvvm.library.library-widget.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-widget/AlanMvvm.library.library-widget.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-widget/AlanMvvm.library.library-widget.main.iml" />

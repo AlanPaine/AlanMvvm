@@ -1,13 +1,23 @@
 ext {
     //isBuildModule 为 true 时可以使每个组件独立运行, false 则可以将所有组件集成到宿主 App 中
     isBuildModule = false
+    //App相关 如果要做马甲包在这里改成你要的包名即可
+    app = [
+            //////////////////DEMO//////////////////
+            //App包名
+            appId:"com.alan.demo",
+            //签名路径
+            keystore:"./keystore/keystore.properties",
+            //版本号
+            versionCode      : 1,
+            //版本名称
+            versionName      : "1.0.0",
+    ]
     //android 开发版本
     android = [
             compileSdkVersion: 32,
             minSdkVersion    : 21,
             targetSdkVersion : 32,
-            versionCode      : 1,
-            versionName      : "1.0.0",
     ]
 
     //androidx支持库配置
@@ -47,6 +57,20 @@ ext {
             "rxhttp"                       :"com.github.liujingxing.rxhttp:rxhttp:2.8.8",
             // ksp/kapt/annotationProcessor choose one
             "rxhttp-compiler"              :"com.github.liujingxing.rxhttp:rxhttp-compiler:2.8.8",
+            // 友盟基础组件：https://bintray.com/umsdk/release/common
+            "umsdk-common"                 : "com.umeng.umsdk:common:9.4.4",
+            "umsdk-asms"                   : "com.umeng.umsdk:asms:1.4.1",
+            "umsdk-share-core"             : "com.umeng.umsdk:share-core:7.1.9",
+            "umsdk-share-board"            : "com.umeng.umsdk:share-board:7.1.9",
+            "umsdk-share-qq"               : "com.umeng.umsdk:share-qq:7.1.9",
+            "qqopensdk"                    : "com.tencent.tauth:qqopensdk:3.53.0",
+            "umsdk-share-wx"               : "com.umeng.umsdk:share-wx:7.1.9",
+            "wechat-sdk-android-without-mta"               : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0",
+            "umsdk-share-sina"             : "com.umeng.umsdk:share-sina:7.1.9",
+            "umsdk-push"                    : "com.umeng.umsdk:push:6.4.5",
+
+            // 友盟统计：https://bintray.com/umsdk/release/analytics
+            // "umsdk-analytics"              :"com.umeng.umsdk:analytics:8.1.6",
 
     ]
 

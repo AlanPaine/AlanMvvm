@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.getActivity:ToastUtils:9.5@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f2a739aa72653b8e4dd926330488630e/transformed/ToastUtils-9.5/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1e1ad784d95247d3ad52e8028ccc7b5f/transformed/jetified-ToastUtils-9.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1e1ad784d95247d3ad52e8028ccc7b5f/transformed/jetified-ToastUtils-9.5/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1e1ad784d95247d3ad52e8028ccc7b5f/transformed/jetified-ToastUtils-9.5/AndroidManifest.xml" />

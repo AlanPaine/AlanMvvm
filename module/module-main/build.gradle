@@ -6,6 +6,26 @@ android {
         if (isBuildModule.toBoolean()) {
             applicationId "com.alan.module_main"
         }
+
+        manifestPlaceholders = [
+                GETUI_APPID          : "24G3nkB07c7KqJ04ahGrm8",
+                AIFBD_SCORE_APPKEY   : "geyao",//
+                AIFBD_SCORE_APPSECRET: "geyao",//
+                // 友盟 AppKey
+                'UMENG_APPKEY' : '5fdb2702c641ae1bbea24488',
+                // QQ AppId
+                'QQ_APPID' : '101900952',
+                // QQ AppKey
+                'QQ_APPKEY' : '1e53a7c5ceec31a14ffbd70b014faf93',
+                // 微信 AppId
+                'WX_APPID' : 'wxcc58056abb83b1a1',
+                // 微信 AppKey
+                'WX_APPKEY' : 'e3e5bb24111eda2f9a13061d9df9d2a7',
+                // 微博 AppId
+                'SN_APPID' : '990990142',
+                // 微博 AppKey
+                'SN_APPKEY' : 'd5595beccbbe1c805751f2befdeff32e'
+        ]
     }
     buildFeatures {
         dataBinding = true
@@ -14,6 +34,6 @@ android {
 }
 
 dependencies {
-
+    api project(path: ':library:library-umeng')
 
 }
