@@ -58,11 +58,29 @@ class App : BaseApp() {
 </details>
 
 <details>
-<summary>3、module 存放你各个模块功能，均可独立运行/summary>
+<summary>4、module 存放你各个模块功能，均可独立运行/summary>
 
 ```kotlin
 //module-main //所有使用参考module-main的使用
 //.........
+```
+</details>
+        
+<details>
+<summary>5、config.gradle 存放你各个模块功能引入的库及配置文件/summary>
+
+```kotlin
+ app = [
+            //////////////////DEMO快速换马甲//////////////////
+            //App包名
+            appId:"com.alan.demo",
+            //签名路径
+            keystore:"./keystore/keystore.properties",
+            //版本号
+            versionCode      : 1,
+            //版本名称
+            versionName      : "1.0.0",
+    ]
 ```
 </details>
 
