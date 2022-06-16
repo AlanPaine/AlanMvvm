@@ -5,9 +5,8 @@ import com.umeng.socialize.bean.SHARE_MEDIA
 import java.lang.ref.SoftReference
 
 /**
- * author : Android 轮子哥
- * github : https://github.com/getActivity/AndroidProject
- * time   : 2019/04/03
+ * 作者　: AlanPaine
+ * 时间　: 2022/06/08
  * desc   : 友盟第三方登录
  */
 class AifbdUmengLogin {
