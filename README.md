@@ -67,7 +67,7 @@ class App : BaseApp() {
 </details>
         
 <details>
-<summary>4、config.gradle 存放你各个模块功能引入的库及配置文件/summary>
+<summary>5、config.gradle 存放你各个模块功能引入的库及配置文件/summary>
 
 ```kotlin
  app = [
