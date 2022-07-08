@@ -1,15 +1,12 @@
 package com.alan.module_main.ui.activity
 
 import android.os.Bundle
-import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.lifecycle.lifecycleScope
-import com.alan.arms.aop.Log
 import com.alan.arms.base.activity.BaseVmVbActivity
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.isOnDoubleClick
-import com.alan.commonlib.other.GsonUtils
 import com.alan.module_main.R
 import com.alan.module_main.config.AppConstants
 import com.alan.module_main.databinding.ActivityMainBinding
@@ -18,7 +15,6 @@ import com.alan.module_main.other.JsBridge
 import com.alan.umenglib.AifbdPlatform
 import com.alan.umenglib.AifbdUmengClient
 import com.alan.umenglib.AifbdUmengShare
-import com.axber.art.ext.getBitmap
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -30,6 +26,7 @@ class MainActivity : BaseVmVbActivity<BaseViewModel,ActivityMainBinding>() {
 
 
     override fun onViewCreated(savedInstanceState: Bundle?) {
+
         mViewBind.spWebView.run {
 
             webViewClient = object :WebViewClient(){
@@ -76,6 +73,10 @@ class MainActivity : BaseVmVbActivity<BaseViewModel,ActivityMainBinding>() {
                             AppConstants.GO_TO_NEW_PAGE.tag -> {
                                 //打开新界面
                                 showToast("打开新界面")
+                                launch<BrowserActivity>(this@MainActivity){
+                                    putExtra("param1", "data")
+                                    putExtra("param2", 123)
+                                }
                             }
 
                             AppConstants.SHARE.tag-> {

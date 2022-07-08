@@ -95,6 +95,7 @@ abstract class BaseVmActivity <VM : BaseViewModel>  : AppCompatActivity(),IActiv
         return super<AppCompatActivity>.startActivity(intent)
     }
 
+
     /**
      * 如果当前的 Activity（singleTop 启动模式） 被复用时会回调
      */
@@ -112,6 +113,16 @@ abstract class BaseVmActivity <VM : BaseViewModel>  : AppCompatActivity(),IActiv
 
     override fun onDestroy() {
         super.onDestroy()
+
         removeCallbacks()
+    }
+
+    companion object {
+       inline fun <reified T> launch(context: Context, block: Intent.() -> Unit) {
+            val intent = Intent(context,T::class.java)
+            intent.block()
+            context.startActivity(intent)
+        }
+
     }
 }
