@@ -28,6 +28,7 @@ open class BaseApp : Application() , ViewModelStoreOwner {
 
     override fun onCreate() {
         super.onCreate()
+        sInstance = this
         initSdk(this)
         mAppViewModelStore = ViewModelStore()
     }
@@ -47,6 +48,19 @@ open class BaseApp : Application() , ViewModelStoreOwner {
     }
 
     companion object {
+        private var sInstance: BaseApp? = null
+        /**
+         * 获得当前app运行的Application
+         */
+        val instance: BaseApp?
+            get() {
+                if (sInstance == null) {
+                    throw NullPointerException(
+                        "please inherit BaseApplication or call setApplication."
+                    )
+                }
+                return sInstance
+            }
             /**
              * 初始化一些第三方框架
              */
