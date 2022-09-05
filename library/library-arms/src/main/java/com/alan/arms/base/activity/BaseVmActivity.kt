@@ -16,9 +16,10 @@ import com.alan.arms.base.fragment.BaseFragment
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.getVmClazz
 import com.alan.arms.ext.notNull
+import com.alan.arms.other.AcCallBackHelper
 
 abstract class BaseVmActivity <VM : BaseViewModel>  : AppCompatActivity(),IActivityAction,ActivityAction,ToastAction,
-    HandlerAction,KeyboardAction {
+    HandlerAction,KeyboardAction,IAcCallBack by AcCallBackHelper() {
 
     lateinit var mViewModel: VM
 
@@ -29,6 +30,7 @@ abstract class BaseVmActivity <VM : BaseViewModel>  : AppCompatActivity(),IActiv
         onViewCreated(savedInstanceState)//界面创建完成
         createObserver()//创建观察者
         initData()//初始化数据
+        initAcCallBackHelper()
     }
     /**
      * 初始化布局
@@ -118,11 +120,11 @@ abstract class BaseVmActivity <VM : BaseViewModel>  : AppCompatActivity(),IActiv
     }
 
     companion object {
-       inline fun <reified T> launch(context: Context, block: Intent.() -> Unit) {
-            val intent = Intent(context,T::class.java)
-            intent.block()
-            context.startActivity(intent)
-        }
+//       inline fun <reified T> launch(context: Context, block: Intent.() -> Unit) {
+//            val intent = Intent(context,T::class.java)
+//            intent.block()
+//            context.startActivity(intent)
+//        }
 
     }
 }

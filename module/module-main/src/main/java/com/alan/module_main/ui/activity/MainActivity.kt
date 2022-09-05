@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.lifecycle.lifecycleScope
+import com.alan.arms.action.IAcCallBack
 import com.alan.arms.base.activity.BaseVmVbActivity
 import com.alan.arms.base.viewmodel.BaseViewModel
 import com.alan.arms.ext.isOnDoubleClick
+import com.alan.arms.ext.launchAc
+import com.alan.arms.other.AcCallBackHelper
+import com.alan.arms.other.LaunchUtil
 import com.alan.module_main.R
 import com.alan.module_main.config.AppConstants
 import com.alan.module_main.databinding.ActivityMainBinding
@@ -73,10 +77,15 @@ class MainActivity : BaseVmVbActivity<BaseViewModel,ActivityMainBinding>() {
                             AppConstants.GO_TO_NEW_PAGE.tag -> {
                                 //打开新界面
                                 showToast("打开新界面")
-                                launch<BrowserActivity>(this@MainActivity){
-                                    putExtra("param1", "data")
-                                    putExtra("param2", 123)
+                                launchAc<BrowserActivity>("param1" to "data","param2" to 123 ){
+                                    result { code, result ->
+                                        showToast("BrowserActivity页面传值${result?.getStringExtra("data")}")
+                                    }
                                 }
+//                                launch<BrowserActivity>(this@MainActivity){
+//                                    putExtra("param1", "data")
+//                                    putExtra("param2", 123)
+//                                }
                             }
 
                             AppConstants.SHARE.tag-> {

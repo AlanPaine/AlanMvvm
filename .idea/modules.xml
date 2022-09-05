@@ -7,10 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AlanMvvm.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.main.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appgy/AlanMvvm.appgy.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/AlanMvvm.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/AlanMvvm.library.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library-arms/AlanMvvm.library.library-arms.androidTest.iml" />

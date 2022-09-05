@@ -8,12 +8,15 @@ import com.alan.module_main.databinding.ActivityBrowserBinding
 /**
  * 浏览器
  */
-class BrowserActivity : BaseVmVbActivity<BaseViewModel,ActivityBrowserBinding> () {
+class BrowserActivity : BaseVmVbActivity<BaseViewModel, ActivityBrowserBinding>() {
     /**
      * 初始化view
      */
     override fun onViewCreated(savedInstanceState: Bundle?) {
-
+        mViewBind.button.setOnClickListener {
+            setResult(RESULT_OK)
+            finish()
+        }
     }
 
 
